@@ -1,5 +1,5 @@
 :root {
-    --neutral: #232946;
+    --neutral: #222021;
     --neutral-focus: #121629;
 }
 
@@ -310,4 +310,8 @@ footer {
     font-size: 20px;
     padding-left: 15px;
 
+}
+
+#game-dev {
+    background-color: var(--neutral);
 }
