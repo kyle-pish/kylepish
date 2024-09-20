@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Multiplayer Game Development Project</title>
-  <style>
-    /* Add your CSS styles here */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplayer Game</title>
+<style>
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 20px;
+        margin: 0;
+        padding: 0;
+        background-color: #222021; /* Gray background color */
+        font-family: Arial, sans-serif; /* Font style */
     }
-    h1, h2 {
-      text-align: center;
-      color: white;
-      text-shadow: 10px 10px 10px rgba(114, 110, 110, 0.5);
-    }
-    .project-info {
-      margin-bottom: 30px;
-    }
-  </style>
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body id = "game-dev">
-  <h1>Multiplayer Game Development Project</h1>
 
-  <div class="project-info">
+    .content-container {
+        width: 60%; /* Width of the content area */
+        margin: 50px auto; /* Center the content horizontally */
+        background-color: #ffffff; /* White background color */
+        padding: 20px; /* Padding around the content */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    }
+
+
+    h1 {
+        text-align: center; /* Center align the heading */
+        
+    }
     
-  </div>
+    h2 {
+        text-align: justify;
+    }
+
+    p {
+        text-align: justify; /* Justify align the paragraphs */
+    }
+    
+    video.center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+</style>
+</head>
+<body>
+
+<div class="content-container">
+    <video width="720" autoplay loop style="display: block; margin: 0 auto;">
+        <source src="./assets/multiplayer_demo.mp4" type="video/mp4">
+        
+      Your browser does not support the video tag.
+      </video> 
+</div>
+
 </body>
 </html>

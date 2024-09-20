@@ -1,17 +1,9 @@
-
-
-
-
-
-
-
-
   <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Computer Science Teaching Assistant</title>
+<title>Player Detection System</title>
 <style>
     body {
         margin: 0;
@@ -61,6 +53,232 @@
       Your browser does not support the video tag.
       </video> 
 </div>
+
+<div style="
+  display: flex;
+  justify-content: center;
+  align-items: center;">
+
+    <a href="https://github.com/kyle-pish/Counter-Strike-Aimbot" target="_blank" style="text-decoration: none;">
+        <button style="
+        padding: 12px 24px;
+        background-color: #24292e;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        ">
+        View Full Project
+        </button>
+  </a>
+</div>
+  
+  <style>
+    button:hover {
+      background-color: #0366d6; /* Changes background color on hover */
+      color: #fff; /* Keeps the text white */
+      transform: translateY(-3px);
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    }
+  
+    button:active {
+      background-color: #0053ba; /* Darker blue when button is clicked */
+      transform: translateY(0);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+<div class="content-container">
+    <h1><u>Neural Network Based Player Detection System</u></h1>
+    
+    <p>You may be wondering what is this, and why did I make it. Well, it's exactly what it sounds like, 
+        a Neural Network based player detection system for the videogame Counter-Strike. It's like an aimbot,
+        but <i>technically</i> it's not since it doesn't directly interact with the game in any way. In short, what
+        this does is recognize players on the screen and classifies them as a player on either the T or CT team.
+        So why did I make this? In my the spring of 2024, my junior year of college, I was taking a computer science 
+        class title Deep Learning which was all about neural networks and the cool things they can do. As part of the
+        course, we had to develop a project of our choice involving Neural Networks to present on our final day, so as
+        a person who loves videogames and computer science, I decided to merge them into one project!</p>
+    <p></p>
+
+    <h2>Quick Overview</h2>
+    <ul>
+        <li>Neural network system to detect and classify players in a rendered 3D environment using Python, PyTorch, and YOLOv5.</li>
+        <li>Two neural network models were used, YOLOv5 and a custom model</li>
+        <li>Implemented a custom model using Python’s Keras library consisting of 14 layers and over 3,000,000 parameters.</li>
+        <li>Create a custom dataset of nearly 4,000 data samples for efficient model training</li>
+    </ul>
+    
+    <h3>Technical Approach</h3>
+    <p>
+      The project involved multiple stages, including dataset creation, model building, and evaluation. 
+      Key tools and libraries used in this project include:
+      <ul>
+        <li><strong>RoboFlow</strong>: Used for dataset management and augmentation.</li>
+        <li><strong>OpenCV</strong>: A library for image processing tasks such as reading image files, resizing, and drawing bounding boxes.</li>
+        <li><strong>YOLOv5</strong>: A pre-trained object detection model known for its speed and accuracy, ideal for real-time applications.</li>
+        <li><strong>TensorFlow</strong>: The core framework used to build and train the custom model.</li>
+      </ul>
+    </p>
+  
+    <h3>Dataset Information</h3>
+    <p>
+      I created a custom dataset of nearly 4,000 images of Counter Strike players. This dataset was 
+      annotated using LabelImg and processed through RoboFlow, which provided essential data augmentation 
+      like resizing and recoloring. The data was split into training, validation, and test sets for 
+      efficient model training.
+    </p>
+  
+    <h3>Model Architectures</h3>
+    <p>
+      <strong>Custom Model</strong>: The custom model was designed to perform both bounding box regression 
+      and object classification. It used convolutional neural networks (CNNs) to extract features from the 
+      images, followed by layers dedicated to classification (CT or T) and localization (bounding box prediction).
+    </p>
+    <p>
+      <strong>YOLOv5 Model</strong>: YOLOv5 was selected for transfer learning due to its performance in 
+      real-time object detection. With a small model size, YOLOv5s (small) was ideal for the limited 
+      computational resources available, while still providing highly competitive detection accuracy.
+    </p>
+  
+    <h3>Training and Evaluation</h3>
+    <p>
+      <strong>Custom Model</strong>: The custom model was trained over 100 epochs with various pre-processing 
+      techniques to improve accuracy, including image normalization and bounding box scaling.
+    </p>
+    <p>
+      <strong>YOLOv5 Model</strong>: YOLOv5 was fine-tuned with transfer learning, where I leveraged a pre-trained 
+      model to adapt it to the Counter Strike player dataset.
+    </p>
+    <p>
+      During testing, both models were evaluated using standard metrics like classification accuracy and Intersection 
+      over Union (IoU) to measure how closely predicted bounding boxes matched the actual player locations.
+    </p>
+  
+    <h3>Results</h3>
+    <p>
+      <strong>Custom Model</strong>: While the custom model performed well on training data, its accuracy on test data 
+      was limited. It struggled to detect players outside the center of the screen or partially visible players, 
+      likely due to the simplicity of the architecture and possible bias in the training data.
+    </p>
+    <p>
+      <strong>YOLOv5 Model</strong>: The YOLOv5 model significantly outperformed the custom model in both classification 
+      and localization. It achieved high accuracy in differentiating CT and T players but struggled with some false positives, 
+      misclassifying random objects as players.
+    </p>
+</div>
+
+<div style="font-family: monospace;" class="content-container">
+    <h2><center>Custom Model Architecture</center></h2>
+    <hr>
+    <table border="1" cellspacing="0" cellpadding="4">
+      <tr>
+        <th>Layer (type)</th>
+        <th>Output Shape</th>
+        <th>Param #</th>
+        <th>Connected to</th>
+      </tr>
+      <tr>
+        <td>input_1 (InputLayer)</td>
+        <td>[(None, 244, 244, 1)]</td>
+        <td>0</td>
+        <td>[]</td>
+      </tr>
+      <tr>
+        <td>conv2d (Conv2D)</td>
+        <td>(None, 242, 242, 16)</td>
+        <td>160</td>
+        <td>['input_1[0][0]']</td>
+      </tr>
+      <tr>
+        <td>batch_normalization (BatchNormalization)</td>
+        <td>(None, 242, 242, 16)</td>
+        <td>64</td>
+        <td>['conv2d[0][0]']</td>
+      </tr>
+      <tr>
+        <td>average_pooling2d (AveragePooling2D)</td>
+        <td>(None, 121, 121, 16)</td>
+        <td>0</td>
+        <td>['batch_normalization[0][0]']</td>
+      </tr>
+      <tr>
+        <td>conv2d_1 (Conv2D)</td>
+        <td>(None, 119, 119, 32)</td>
+        <td>4640</td>
+        <td>['average_pooling2d[0][0]']</td>
+      </tr>
+      <tr>
+        <td>batch_normalization_1 (BatchNormalization)</td>
+        <td>(None, 119, 119, 32)</td>
+        <td>128</td>
+        <td>['conv2d_1[0][0]']</td>
+      </tr>
+      <tr>
+        <td>average_pooling2d_1 (AveragePooling2D)</td>
+        <td>(None, 59, 59, 32)</td>
+        <td>0</td>
+        <td>['batch_normalization_1[0][0]']</td>
+      </tr>
+      <tr>
+        <td>conv2d_2 (Conv2D)</td>
+        <td>(None, 57, 57, 64)</td>
+        <td>18496</td>
+        <td>['average_pooling2d_1[0][0]']</td>
+      </tr>
+      <tr>
+        <td>batch_normalization_2 (BatchNormalization)</td>
+        <td>(None, 57, 57, 64)</td>
+        <td>256</td>
+        <td>['conv2d_2[0][0]']</td>
+      </tr>
+      <tr>
+        <td>dropout (Dropout)</td>
+        <td>(None, 57, 57, 64)</td>
+        <td>0</td>
+        <td>['batch_normalization_2[0][0]']</td>
+      </tr>
+      <tr>
+        <td>average_pooling2d_2 (AveragePooling2D)</td>
+        <td>(None, 28, 28, 64)</td>
+        <td>0</td>
+        <td>['dropout[0][0]']</td>
+      </tr>
+      <tr>
+        <td>flatten (Flatten)</td>
+        <td>(None, 50176)</td>
+        <td>0</td>
+        <td>['average_pooling2d_2[0][0]']</td>
+      </tr>
+      <tr>
+        <td>dense (Dense)</td>
+        <td>(None, 64)</td>
+        <td>3211328</td>
+        <td>['flatten[0][0]']</td>
+      </tr>
+      <tr>
+        <td>classifier (Dense)</td>
+        <td>(None, 2)</td>
+        <td>130</td>
+        <td>['dense[0][0]']</td>
+      </tr>
+      <tr>
+        <td>regressor (Dense)</td>
+        <td>(None, 4)</td>
+        <td>260</td>
+        <td>['dense[0][0]']</td>
+      </tr>
+    </table>
+    <hr>
+    <p>Total params: 3,235,462 (12.34 MB)</p>
+    <p>Trainable params: 3,235,238 (12.34 MB)</p>
+    <p>Non-trainable params: 224 (896.00 Byte)</p>
+    <hr>
+  </div>
 
 </body>
 </html>
