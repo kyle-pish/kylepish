@@ -22,12 +22,13 @@
         }
 
         .table-container {
-            width: 80%; /* Width of the content area */
+            width: 80%; /* Full width of the content container */
             margin: 50px auto; /* Center the content horizontally */
             background-color: #ffffff; /* White background color */
             padding: 20px; /* Padding around the content */
             border-radius: 10px; /* Rounded corners */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+            text-align: center; /* Center the image */
         }
 
         h1 {
@@ -87,13 +88,28 @@
             transform: translateY(0);
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
+
+        /* Responsive image styling */
+        .responsive-table-image {
+            width: 100%; /* Ensures the image always fits the content container */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 100%; /* Ensure the image doesn't overflow the container */
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 600px) {
+            .content-container {
+                width: 90%; /* Adjust content container width for smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
 
 <!-- Video Section -->
 <div class="content-container">
-    <video class="center" autoplay loop muted>
+    <video class="center" autoplay loop muted playsinline controls>
         <source src="./assets/aimbot_demo.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -186,112 +202,9 @@
     </p>
 </div>
 
-<div style="font-family: monospace;" class="table-container">
-    <h2><center>Custom Model Architecture</center></h2>
-    <hr><center>
-    <table border="1" cellspacing="0" cellpadding="4">
-      <tr>
-        <th>Layer (type)</th>
-        <th>Output Shape</th>
-        <th>Param #</th>
-        <th>Connected to</th>
-      </tr>
-      <tr>
-        <td>input_1 (InputLayer)</td>
-        <td>[(None, 244, 244, 1)]</td>
-        <td>0</td>
-        <td>[]</td>
-      </tr>
-      <tr>
-        <td>conv2d (Conv2D)</td>
-        <td>(None, 242, 242, 16)</td>
-        <td>160</td>
-        <td>['input_1[0][0]']</td>
-      </tr>
-      <tr>
-        <td>batch_normalization (BatchNormalization)</td>
-        <td>(None, 242, 242, 16)</td>
-        <td>64</td>
-        <td>['conv2d[0][0]']</td>
-      </tr>
-      <tr>
-        <td>average_pooling2d (AveragePooling2D)</td>
-        <td>(None, 121, 121, 16)</td>
-        <td>0</td>
-        <td>['batch_normalization[0][0]']</td>
-      </tr>
-      <tr>
-        <td>conv2d_1 (Conv2D)</td>
-        <td>(None, 119, 119, 32)</td>
-        <td>4640</td>
-        <td>['average_pooling2d[0][0]']</td>
-      </tr>
-      <tr>
-        <td>batch_normalization_1 (BatchNormalization)</td>
-        <td>(None, 119, 119, 32)</td>
-        <td>128</td>
-        <td>['conv2d_1[0][0]']</td>
-      </tr>
-      <tr>
-        <td>average_pooling2d_1 (AveragePooling2D)</td>
-        <td>(None, 59, 59, 32)</td>
-        <td>0</td>
-        <td>['batch_normalization_1[0][0]']</td>
-      </tr>
-      <tr>
-        <td>conv2d_2 (Conv2D)</td>
-        <td>(None, 57, 57, 64)</td>
-        <td>18496</td>
-        <td>['average_pooling2d_1[0][0]']</td>
-      </tr>
-      <tr>
-        <td>batch_normalization_2 (BatchNormalization)</td>
-        <td>(None, 57, 57, 64)</td>
-        <td>256</td>
-        <td>['conv2d_2[0][0]']</td>
-      </tr>
-      <tr>
-        <td>dropout (Dropout)</td>
-        <td>(None, 57, 57, 64)</td>
-        <td>0</td>
-        <td>['batch_normalization_2[0][0]']</td>
-      </tr>
-      <tr>
-        <td>average_pooling2d_2 (AveragePooling2D)</td>
-        <td>(None, 28, 28, 64)</td>
-        <td>0</td>
-        <td>['dropout[0][0]']</td>
-      </tr>
-      <tr>
-        <td>flatten (Flatten)</td>
-        <td>(None, 50176)</td>
-        <td>0</td>
-        <td>['average_pooling2d_2[0][0]']</td>
-      </tr>
-      <tr>
-        <td>dense (Dense)</td>
-        <td>(None, 64)</td>
-        <td>3211328</td>
-        <td>['flatten[0][0]']</td>
-      </tr>
-      <tr>
-        <td>classifier (Dense)</td>
-        <td>(None, 2)</td>
-        <td>130</td>
-        <td>['dense[0][0]']</td>
-      </tr>
-      <tr>
-        <td>regressor (Dense)</td>
-        <td>(None, 4)</td>
-        <td>260</td>
-        <td>['dense[0][0]']</td>
-      </tr>
-    </table>
-    </center><hr>
-    <p><center>Total params: 3,235,462 (12.34 MB)</center></p>
-    <p><center>Trainable params: 3,235,238 (12.34 MB)</center></p>
-    <p><center>Non-trainable params: 224 (896.00 Byte)</center></p>
-    <hr>
+<div class="table-container">
+  <h2><center>Custom Model Architecture</center></h2>
+  <img src="./assets/nnab_table.png" alt="Custom Model Architecture" class="responsive-table-image">
 </div>
 
 </body>
