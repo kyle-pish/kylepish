@@ -197,55 +197,10 @@
             </a>
         </div>
 
-        <!-- Recruiter Button -->
-        <div class="recruiter-button-container">
-            <button id="recruiterButton" class="recruiter-button">Recruiter? Click Here</button>
-        </div>
-
-        <!-- Recruiter Contact Form -->
-        <div id="recruiterForm" class="form-popup">
-            <form id="recruiterContactForm">
-                <h2 style="color: white">Contact Kyle</h2>
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit" class="form-submit">Send Message</button>
-                <button type="button" class="form-cancel" onclick="closeForm()">Cancel</button>
-            </form>
-        </div>
     </section>
 
     <footer>Created by Kyle Pish 2023</footer>
 
-    <!-- JavaScript for form submission and modal functionality -->
-    <script>
-        // Open the recruiter form when the button is clicked
-        document.getElementById('recruiterButton').addEventListener('click', function () {
-            document.getElementById('recruiterForm').style.display = 'block';
-        });
-
-        // Close the recruiter form
-        function closeForm() {
-            document.getElementById('recruiterForm').style.display = 'none';
-        }
-
-        // Handle form submission
-        document.getElementById('recruiterContactForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the form from reloading the page
-            emailjs.sendForm('service_edfy427', 'template_492n7oh', this)
-                .then(function (response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    alert('Message sent successfully!');
-                    closeForm(); // Close the form after submission
-                }, function (error) {
-                    console.log('FAILED...', error);
-                    alert('Failed to send message. Please try again later.');
-                });
-        });
-    </script>
 </body>
 
 </html>
