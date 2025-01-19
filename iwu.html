@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IWU</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #222021;
+        font-family: Arial, sans-serif;
+        color: #000; /* Ensure all text is black */
+    }
+
+    .content-container {
+        width: 60%;
+        margin: 50px auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #000; /* Black text for the main heading */
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #000; /* Black text for subheadings */
+    }
+
+    .course {
+        margin: 15px 0;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .course:hover {
+        background-color: #f9f9f9;
+        border-color: #000; /* Highlight border on hover with black color */
+    }
+
+    .course-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #000; /* Black text for course titles */
+        cursor: pointer;
+        margin: 0;
+    }
+
+    .course-description {
+        margin-top: 10px;
+        font-size: 0.95em;
+        line-height: 1.5;
+        color: #000; /* Black text for descriptions */
+        display: none; /* Hidden by default */
+    }
+</style>
+<script>
+    function toggleDescription(id) {
+        const description = document.getElementById(id);
+        description.style.display = (description.style.display === "none" || description.style.display === "") ? "block" : "none";
+    }
+</script>
+</head>
+<body>
+
+<div class="content-container">
+    <h1 class="main-heading">Illinois Wesleyan University</h1>
+</div>
+
+<div class="content-container">
+    <h2 class="sub-heading">Courses in Computer Science</h2>
+
+    <div class="course">
+        <p class="course-title" onclick="toggleDescription('cs1')">Computer Science I & II</p>
+        <p class="course-description" id="cs1">
+            An introduction to fundamental programming concepts, including data structures, algorithms, and object-oriented programming.
+        </p>
+    </div>
+
+    <div class="course">
+        <p class="course-title" onclick="toggleDescription('coa')">Computational Organization-Architecture</p>
+        <p class="course-description" id="coa">
+            Explores the design and functionality of computer hardware, focusing on the relationship between hardware and software.
+        </p>
+    </div>
+
+    <div class="course">
+        <p class="course-title" onclick="toggleDescription('sd')">Software Development</p>
+        <p class="course-description" id="sd">
+            Focuses on software engineering principles, including development methodologies, version control, and collaborative coding.
+        </p>
+    </div>
+
+    <div class="course">
+        <p class="course-title" onclick="toggleDescription('pl')">Programming Languages</p>
+        <p class="course-description" id="pl">
+            Analyzes programming paradigms, syntax, semantics, and features of various programming languages.
+        </p>
+    </div>
+
+    <div class="course">
+        <p class="course-title" onclick="toggleDescription('ada')">Algorithm Design and Analysis</p>
+        <p class="course-description" id="ada">
+            Examines efficient algorithm development, performance analysis, and computational problem-solving techniques.
+        </p>
+    </div>
+
+    <div class="course">
+        <p class="course-title" onclick="toggleDescription('cn')">Computer Networking</p>
+        <p class="course-description" id="cn">
+            Covers the fundamentals of data communication, network protocols, and the architecture of computer networks.
+        </p>
+    </div>
+
+    <div class="course">
+        <p class="course-title" onclick="toggleDescription('ada2')">Applied Data Analysis</p>
+        <p class="course-description" id="ada2">
+            Teaches statistical techniques, data visualization, and programming tools for analyzing real-world datasets.
+        </p>
+    </div>
+
+    <div class="course">
+        <p class="course-title" onclick="toggleDescription('dl')">Deep Learning</p>
+        <p class="course-description" id="dl">
+            Introduces neural networks, training algorithms, and applications of deep learning in AI and machine learning.
+        </p>
+    </div>
+
+    <div class="course">
+        <p class="course-title" onclick="toggleDescription('ai')">Artificial Intelligence</p>
+        <p class="course-description" id="ai">
+            Explores foundational AI topics such as search algorithms, logic, planning, and decision-making systems.
+        </p>
+    </div>
+
+    <div class="course">
+        <p class="course-title" onclick="toggleDescription('cb')">Computational Biology</p>
+        <p class="course-description" id="cb">
+            Combines computer science and biology to analyze biological data, including DNA sequencing and protein interactions.
+        </p>
+    </div>
+
+    <div class="course">
+        <p class="course-title" onclick="toggleDescription('mc')">Models of Computing</p>
+        <p class="course-description" id="mc">
+            Studies computational theory, automata, Turing machines, and the limits of computation.
+        </p>
+    </div>
+
+    <div class="course">
+        <p class="course-title" onclick="toggleDescription('ds')">Database Systems</p>
+        <p class="course-description" id="ds">
+            Explores database design, query languages, and techniques for managing and retrieving structured data.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
