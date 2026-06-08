@@ -136,42 +136,100 @@
 
     <!-- Experience Section -->
     <section id="experience">
-        <h1>My experience in Computer Science</h1>
+        <h1>Professional Experience Timeline</h1>
+
+        <div class="timeline-headline">
+            <p>Scroll sideways to explore each role and click cards to expand impact details.</p>
+            <div class="timeline-nav" aria-label="Timeline navigation">
+                <button id="timeline-prev" class="timeline-arrow" aria-label="Scroll timeline left">&larr;</button>
+                <button id="timeline-next" class="timeline-arrow" aria-label="Scroll timeline right">&rarr;</button>
+            </div>
+        </div>
+
+        <div id="experience-timeline" class="experience-timeline" aria-label="Kyle Pish work experience timeline">
+            <article class="timeline-card" tabindex="0">
+                <p class="timeline-date">May 2025 - Present</p>
+                <h2>Software Engineer</h2>
+                <h3>State Farm | Bloomington, IL</h3>
+                <p class="timeline-summary">Built scalable distributed data systems in AWS and Spark with measurable performance gains.</p>
+                <ul class="timeline-points">
+                    <li>Processed millions of daily mainframe insurance records using EMR and Apache Spark.</li>
+                    <li>Designed a multi-lane AWS testing framework with Scalr, reducing test wait time by about 90%.</li>
+                    <li>Optimized code review workflows that reduced nightly jobs from 2-3 hours to around 1 hour.</li>
+                </ul>
+            </article>
+
+            <article class="timeline-card" tabindex="0">
+                <p class="timeline-date">Nov 2024 - May 2025</p>
+                <h2>Machine Learning Engineer</h2>
+                <h3>DG Research | Remote</h3>
+                <p class="timeline-summary">Researched and validated ML use cases for enterprise adoption.</p>
+                <ul class="timeline-points">
+                    <li>Researched high-impact ML opportunities for Fortune 100 organizations.</li>
+                    <li>Built proof-of-concept models to test feasibility and scalability.</li>
+                    <li>Delivered model performance analysis and deployment recommendations.</li>
+                </ul>
+            </article>
+
+            <article class="timeline-card" tabindex="0">
+                <p class="timeline-date">Aug 2023 - May 2025</p>
+                <h2>Computer Science Teaching Assistant</h2>
+                <h3>Illinois Wesleyan University | Bloomington, IL</h3>
+                <p class="timeline-summary">Guided students through algorithm design, complexity analysis, and Java data structures.</p>
+                <ul class="timeline-points">
+                    <li>Supported 30+ students with Big-O, sorting, and dynamic programming topics.</li>
+                    <li>Provided assignment feedback on BSTs, AVL Trees, and Heaps.</li>
+                    <li>Collaborated with faculty to close learning gaps and improve outcomes.</li>
+                </ul>
+            </article>
+
+            <article class="timeline-card" tabindex="0">
+                <p class="timeline-date">Dec 2023 - Aug 2024</p>
+                <h2>Information Technology Intern</h2>
+                <h3>Brick Technology Group | Bloomington, IL</h3>
+                <p class="timeline-summary">Provided frontline support and automation for client infrastructure and operations.</p>
+                <ul class="timeline-points">
+                    <li>Served as a primary point of contact for technical and security incidents.</li>
+                    <li>Automated repetitive workflows using Bash and PowerShell scripts.</li>
+                    <li>Supported cloud, backend, and web systems for 100+ clients.</li>
+                </ul>
+            </article>
+
+            <article class="timeline-card" tabindex="0">
+                <p class="timeline-date">Jun 2024 - Aug 2024</p>
+                <h2>CS Education Research</h2>
+                <h3>Illinois Wesleyan University | Bloomington, IL</h3>
+                <p class="timeline-summary">Created course materials focused on practical ML and data science learning.</p>
+                <ul class="timeline-points">
+                    <li>Built teaching content for preprocessing, modeling, and regression fundamentals.</li>
+                    <li>Improved instruction around difficult topics such as Git workflows.</li>
+                </ul>
+            </article>
+        </div>
+
+        <h2 class="experience-gallery-title">Experience & Projects</h2>
         <div class="experience">
             <a href="./pages/iwu.html" class="experience-tile">
-                <img src="./assets/iwulogo.jpeg" alt="">
-                <p><span>&lt;</span>Undergraduate CS degree<span>/&gt;</span></p>
-            </a>
-            <a href="./pages/csta.html" class="experience-tile">
-                <img src="./assets/cs.jpeg" alt="">
-                <p><span>&lt;</span>CS Teaching Assistant<span>/&gt;</span></p>
-            </a>
-            <a href="./pages/MLE.html" class="experience-tile">
-                <img src="./assets/Neural_net.png" alt="">
-                <p><span>&lt;</span>Machine Learning Engineer<span>/&gt;</span></p>
-            </a>
-            <a href="./pages/oops.html" class="experience-tile">
-                <img src="./assets/btg-logo.jpg" alt="">
-                <p><span>&lt;</span>Brick Technology<span>/&gt;</span></p>
+                <img src="./assets/iwulogo.jpeg" alt="Illinois Wesleyan University logo">
+                <p><span>&lt;</span>Undergraduate CS Degree<span>/&gt;</span></p>
             </a>
             <a href="./pages/gamedev.html" class="experience-tile">
-                <img src="./assets/controller.webp" alt="">
+                <img src="./assets/controller.webp" alt="Game controller">
                 <p><span>&lt;</span>Game Development<span>/&gt;</span></p>
             </a>
             <a href="./pages/aimbot.html" class="experience-tile">
-                <img src="./assets/aimbot.png" alt="">
+                <img src="./assets/aimbot.png" alt="Aimbot project screenshot">
                 <p><span>&lt;</span>Player Detection System<span>/&gt;</span></p>
             </a>
             <a href="./pages/socialmedia.html" class="experience-tile">
-                <img src="./assets/TheSocialNetwork.png" alt="">
+                <img src="./assets/TheSocialNetwork.png" alt="Social media app graphic">
                 <p><span>&lt;</span>Social Media App<span>/&gt;</span></p>
             </a>
             <a href="./pages/oops.html" class="experience-tile">
-                <img src="./assets/cpu.png" alt="">
+                <img src="./assets/cpu.png" alt="CPU project image">
                 <p><span>&lt;</span>Custom CPU<span>/&gt;</span></p>
             </a>
         </div>
-        <a href="./pages/resume.html" class="resume">View My Resume <i class="ri-arrow-drop-right-line ri-2x"></i></a>
     </section>
 
     <!-- Contact Section -->
@@ -204,6 +262,42 @@
     </section>
 
     <footer>Created by Kyle Pish 2023</footer>
+
+    <script>
+        const timeline = document.getElementById('experience-timeline');
+        const prevBtn = document.getElementById('timeline-prev');
+        const nextBtn = document.getElementById('timeline-next');
+        const cards = Array.from(document.querySelectorAll('.timeline-card'));
+
+        function getScrollAmount() {
+            if (!cards.length) return 300;
+            return cards[0].offsetWidth + 24;
+        }
+
+        if (prevBtn && nextBtn && timeline) {
+            prevBtn.addEventListener('click', () => {
+                timeline.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                timeline.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            });
+        }
+
+        // Card click toggles details for quick interaction while preserving keyboard access.
+        cards.forEach((card) => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('active');
+            });
+
+            card.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    card.classList.toggle('active');
+                }
+            });
+        });
+    </script>
 
 </body>
 
